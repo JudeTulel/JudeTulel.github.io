@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--
+  PORTFOLIO — Jude Tulel. Built from the CV supplied by the user.
+  All content below is sourced from that CV. One thing to confirm before publishing:
+  the "Open to opportunities" line is assumed from the request for an offer-getting site.
+  Edit the COPY in each section without touching the CSS.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jude Tulel — Software Engineer</title>
+<meta name="description" content="Jude Tulel is a software engineer working across AI/computer vision, full-stack web and mobile, and embedded systems. Based in Nairobi, Kenya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfaf8;
+    --surface:#ffffff;
+    --warm:#f3f1ed;
+    --ink:rgba(0,0,0,.94);
+    --muted:#615d59;
+    --faint:#a39e98;
+    --line:rgba(0,0,0,.1);
+    --accent:#b4471f;
+    --accent-ink:#8f3516;
+    --shadow:0 1px 2px rgba(0,0,0,.02),0 4px 14px rgba(0,0,0,.035),0 18px 48px rgba(0,0,0,.04);
+    --max:1180px;
+    --serif:'Instrument Serif',Georgia,serif;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--sans);font-size:16px;line-height:1.5;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  ::selection{background:rgba(180,71,31,.18)}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;cursor:pointer}
+  img{max-width:100%;display:block}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(251,250,248,.86);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;letter-spacing:-.02em}
+  .brand .mark{width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:16px;line-height:1}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 18px;min-height:44px;border-radius:8px;font-size:14px;font-weight:600;letter-spacing:-.01em;border:1px solid transparent;transition:background .2s,transform .2s,color .2s}
+  .btn:active{transform:scale(.98)}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark:hover{background:var(--accent-ink)}
+  .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink)}
+  .btn svg{width:15px;height:15px;flex:none}
+  .menu-toggle{display:none;background:transparent;border:0;width:44px;height:44px;place-items:center}
+  .menu-toggle span{display:block;width:20px;height:1.5px;background:var(--ink);margin:4px 0}
+
+  /* hero */
+  .hero{padding:96px 0 84px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:26px}
+  .eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);position:relative}
+  .eyebrow .pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--accent);opacity:.45;animation:ping 2.4s ease-out infinite}
+  @keyframes ping{0%{transform:scale(.7);opacity:.5}70%{transform:scale(1.6);opacity:0}100%{opacity:0}}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(52px,6.2vw,82px);line-height:.98;letter-spacing:-.02em;margin:0 0 26px;max-width:13ch}
+  h1 em{font-style:italic;color:var(--accent)}
+  .lede{font-size:19px;line-height:1.55;color:var(--muted);max-width:48ch;margin:0 0 34px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-meta{margin-top:40px;display:flex;gap:28px;flex-wrap:wrap}
+  .hero-meta div{display:flex;flex-direction:column;gap:3px}
+  .hero-meta .k{font-family:var(--serif);font-size:27px;line-height:1}
+  .hero-meta .v{font-size:12px;color:var(--muted);letter-spacing:.02em}
+  .portrait{position:relative;background:var(--warm);border:1px solid var(--line);border-radius:16px;min-height:440px;display:flex;flex-direction:column;justify-content:space-between;padding:26px;overflow:hidden}
+  .portrait::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 75% 15%,rgba(180,71,31,.10),transparent 55%);pointer-events:none}
+  .portrait-top{display:flex;justify-content:space-between;align-items:flex-start;position:relative}
+  .portrait-top span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .portrait-initials{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:190px;line-height:1;letter-spacing:-.05em;color:var(--ink);opacity:.92;user-select:none}
+  .portrait-foot{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;border-top:1px solid var(--line);padding-top:18px}
+  .portrait-foot p{margin:0;font-size:13px;color:var(--muted);max-width:26ch}
+  .portrait-foot .arrow{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;flex:none}
+
+  /* trusted */
+  .trusted{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
+  .trusted-row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .trusted-row .label{font-size:12px;color:var(--muted);letter-spacing:.04em}
+  .logos{display:flex;gap:30px;flex-wrap:wrap;align-items:center}
+  .logos span{font-family:var(--serif);font-size:20px;color:var(--muted);opacity:.78}
+
+  /* sections */
+  section{padding:104px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:52px}
+  .sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.6vw,60px);line-height:1.02;letter-spacing:-.018em;margin:0;max-width:15ch}
+  .sec-head p{margin:0;max-width:36ch;color:var(--muted);font-size:15px}
+  .kicker{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+
+  /* work */
+  .work-list{border-top:1px solid var(--line)}
+  .work{display:grid;grid-template-columns:64px 1.2fr 1fr 120px;gap:28px;align-items:center;padding:34px 8px;border-bottom:1px solid var(--line);transition:background .25s,padding .25s}
+  .work:hover{background:var(--surface);padding-left:18px;padding-right:18px}
+  .work .num{font-family:var(--serif);font-size:22px;color:var(--faint)}
+  .work h3{font-size:23px;line-height:1.25;letter-spacing:-.02em;margin:0 0 8px;font-weight:600}
+  .work .desc{font-size:14px;color:var(--muted);margin:0;line-height:1.55}
+  .tags{display:flex;flex-wrap:wrap;gap:7px}
+  .tag{font-size:11px;font-weight:600;letter-spacing:.02em;padding:5px 10px;border-radius:999px;background:var(--warm);color:var(--muted)}
+  .work .go{justify-self:end;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--muted);transition:color .2s,gap .2s}
+  .work:hover .go{color:var(--accent);gap:13px}
+  .work .go svg{width:15px;height:15px}
+
+  /* about */
+  .about{background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px}
+  .about h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.6vw,60px);line-height:1.02;letter-spacing:-.018em;margin:0}
+  .about-body p{font-size:18px;line-height:1.65;color:var(--muted);margin:0 0 22px}
+  .about-body p strong{color:var(--ink);font-weight:600}
+  .capabilities{margin-top:36px;border-top:1px solid var(--line)}
+  .cap{display:flex;gap:22px;align-items:baseline;padding:17px 0;border-bottom:1px solid var(--line)}
+  .cap .n{font-family:var(--serif);font-size:18px;color:var(--accent);width:24px;flex:none}
+  .cap .t{font-weight:600;font-size:15px}
+  .cap .d{font-size:13px;color:var(--muted);margin-left:auto;text-align:right;max-width:38ch}
+
+  /* contact */
+  .contact{background:var(--ink);color:#fff}
+  .contact .kicker{color:#e0a06f}
+  .contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6vw,80px);line-height:1.02;letter-spacing:-.02em;margin:0 0 26px;max-width:16ch}
+  .contact h2 em{font-style:italic;color:#e0a06f}
+  .contact-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:end}
+  .contact p{color:rgba(255,255,255,.62);font-size:17px;max-width:44ch;line-height:1.6;margin:0 0 30px}
+  .btn-light{background:#fff;color:var(--ink)}
+  .btn-light:hover{background:#e8e3dc}
+  .contact-side{border-left:1px solid rgba(255,255,255,.16);padding-left:36px}
+  .contact-side .label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:18px}
+  .contact-side a{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px;transition:color .2s,padding .2s}
+  .contact-side a:hover{color:#e0a06f;padding-left:6px}
+  .contact-side a span:last-child{font-size:12px;color:rgba(255,255,255,.4);font-weight:500}
+  footer{padding:26px 0;border-top:1px solid rgba(255,255,255,.12)}
+  .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;color:rgba(255,255,255,.45)}
+
+  /* toast + reveal */
+  .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:8px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:80;box-shadow:var(--shadow)}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s cubic-bezier(.2,.7,.2,1),transform .65s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .portrait{min-height:360px}
+    .portrait-initials{font-size:150px}
+    .about-grid{grid-template-columns:1fr;gap:36px}
+    .contact-inner{grid-template-columns:1fr;gap:40px}
+    .contact-side{border-left:0;border-top:1px solid rgba(255,255,255,.16);padding:28px 0 0}
+    .work{grid-template-columns:40px 1fr 100px;gap:18px}
+    .work .tags{grid-column:2/4;margin-top:2px}
+  }
+  @media(max-width:720px){
+    .wrap{padding:0 20px}
+    .nav-links{position:absolute;top:72px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 18px;display:none}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;font-size:15px;border-bottom:1px solid var(--line)}
+    .nav-links .btn{margin-top:14px}
+    .menu-toggle{display:grid}
+    .hero{padding:64px 0 60px}
+    section{padding:72px 0}
+    .sec-head{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:36px}
+    .work{grid-template-columns:32px 1fr;padding:24px 4px;gap:12px}
+    .work .num{font-size:18px}
+    .work .go{grid-column:2;justify-self:start;margin-top:6px}
+    .work .tags{grid-column:2}
+    .cap{flex-wrap:wrap;gap:8px}
+    .cap .d{margin-left:0;text-align:left;max-width:none;width:100%;padding-left:32px}
+    .hero-meta{gap:22px}
+    .logos{gap:20px}
+    .logos span{font-size:17px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Jude Tulel, home">
+      <span class="mark">J</span>
+      <span>Jude Tulel</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-dark" href="#contact">Let's talk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow"><span class="pulse"></span> Open to opportunities · Nairobi, Kenya</span>
+        <h1 id="hero-title">Engineering for <em>real problems.</em></h1>
+        <p class="lede">I'm Jude — a software engineer working across AI and computer vision, full-stack web and mobile, and embedded systems. I like hard problems with useful outcomes.</p>
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#work">See the work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+        <div class="hero-meta">
+          <div><span class="k">3</span><span class="v">Hands-on roles</span></div>
+          <div><span class="k">Top 3</span><span class="v">County robotics sweep</span></div>
+          <div><span class="k">BSc</span><span class="v">Software Engineering</span></div>
+        </div>
+      </div>
+      <div class="portrait reveal" role="img" aria-label="Decorative monogram panel with initials J T">
+        <div class="portrait-top"><span>Portfolio</span><span>Nairobi / KE</span></div>
+        <div class="portrait-initials" aria-hidden="true">JT</div>
+        <div class="portrait-foot">
+          <p>AI · Full-stack · Embedded · Blockchain</p>
+          <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUSTED -->
+  <div class="trusted">
+    <div class="wrap trusted-row">
+      <span class="label">Worked with &amp; built alongside</span>
+      <div class="logos" aria-label="Organisations from experience and projects">
+        <span>Kenya Space Agency</span><span>EDCO Technologies</span><span>NSE Innovation Lab</span><span>Chewoyet National Boys</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORK -->
+  <section id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="kicker">Selected work</div><h2 id="work-title">Things I've built.</h2></div>
+        <p>From space-borne computer vision to asset tokenization to robotics education — the common thread is shipping things that work outside a notebook.</p>
+      </div>
+      <div class="work-list">
+        <a class="work reveal" href="#contact" aria-label="Space-Borne AI at Kenya Space Agency and Star Vision">
+          <span class="num">01</span>
+          <div><h3>Space-Borne AI</h3><p class="desc">Trained a YOLOv5 computer-vision model with the team at Kenya Space Agency × Star Vision, then exported it to ONNX for portability onto constrained space-borne compute.</p></div>
+          <div class="tags"><span class="tag">Computer vision</span><span class="tag">Python</span><span class="tag">ONNX</span></div>
+          <span class="go">AI Engineer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="work reveal" href="#contact" aria-label="Virtual assets exchange and tokenization built at the NSE Hedera Hashathon">
+          <span class="num">02</span>
+          <div><h3>Virtual assets exchange</h3><p class="desc">Built and presented an asset exchange (nbx.co.ke) with tokenization on Hedera Hashgraph at the NSE Hedera Hashathon. Selected for the NSE innovation lab.</p></div>
+          <div class="tags"><span class="tag">Blockchain</span><span class="tag">Hedera</span><span class="tag">Solidity</span></div>
+          <span class="go">Hashathon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="work reveal" href="#contact" aria-label="Full stack platform built at EDCO Technologies">
+          <span class="num">03</span>
+          <div><h3>Platform for EDCO Technologies</h3><p class="desc">Created and deployed a PostgreSQL / Node.js / Express backend on Azure, alongside a React Native app for users and a ReactJS admin dashboard.</p></div>
+          <div class="tags"><span class="tag">Full-stack</span><span class="tag">Azure</span><span class="tag">React</span></div>
+          <span class="go">Full-stack dev <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="work reveal" href="#contact" aria-label="Robotics programme at Chewoyet National Boys High School">
+          <span class="num">04</span>
+          <div><h3>Robotics &amp; code, taught</h3><p class="desc">Introduced programming and VEX IQ robotics at Chewoyet National Boys for the Kenya Science and Engineering Fair. The team took all top three county places and advanced to regionals.</p></div>
+          <div class="tags"><span class="tag">Robotics</span><span class="tag">Mentoring</span><span class="tag">C++</span></div>
+          <span class="go">Trainer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <div class="kicker">About</div>
+        <h2 id="about-title">Breadth, with depth where it counts.</h2>
+      </div>
+      <div class="about-body reveal">
+        <p>I'm a <strong>software engineer</strong> with a BSc from Multimedia University, Nairobi. My work spans AI and computer vision, full-stack web and mobile, IoT and embedded systems, and smart contracts — so I'm comfortable moving from a model to a deployed backend to a physical device.</p>
+        <p>What I enjoy most is the unglamorous middle: making the thing actually run, on real hardware, for real people.</p>
+        <div class="capabilities">
+          <div class="cap"><span class="n">01</span><span class="t">AI &amp; computer vision</span><span class="d">PyTorch, TensorFlow, scikit-learn, YOLO, ONNX, NumPy, Pandas</span></div>
+          <div class="cap"><span class="n">02</span><span class="t">Full-stack &amp; mobile</span><span class="d">React, Next.js, React Native, Node/Express, Spring Boot, NestJS, Django</span></div>
+          <div class="cap"><span class="n">03</span><span class="t">Data &amp; embedded</span><span class="d">MySQL, PostgreSQL, MongoDB, C++, Arduino, IoT systems</span></div>
+          <div class="cap"><span class="n">04</span><span class="t">Blockchain</span><span class="d">Solidity smart contracts, Hedera Hashgraph</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="kicker">Get in touch</div>
+      <div class="contact-inner">
+        <div class="reveal">
+          <h2 id="contact-title">Let's build something <em>useful.</em></h2>
+          <p>Open to roles, collaborations, and interesting problems. Reach out and I'll get back to you.</p>
+          <a class="btn btn-light" id="emailBtn" href="mailto:judetulel@gmail.com">
+            judetulel@gmail.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="contact-side reveal">
+          <div class="label">Elsewhere</div>
+          <a href="https://github.com/JudeTulel" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span>JudeTulel ↗</span></a>
+          <a href="https://x.com/YegoJude" target="_blank" rel="noopener noreferrer"><span>X / Twitter</span><span>@YegoJude ↗</span></a>
+          <a href="https://www.youtube.com/results?search_query=Ystudios+Tech" target="_blank" rel="noopener noreferrer"><span>YouTube</span><span>Ystudios Tech ↗</span></a>
+          <a href="tel:+254715402567"><span>Phone</span><span>+254 715 402 567 ↗</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <footer>
+        <div class="foot">
+          <span>© <span id="year">2026</span> Jude Tulel · Nairobi, Kenya</span>
+          <span>Built to do the talking.</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Email copied to clipboard</div>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    items.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(el => io.observe(el));
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const emailBtn = document.getElementById('emailBtn');
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  emailBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const email = 'judetulel@gmail.com';
+    try {
+      await navigator.clipboard.writeText(email);
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+    } catch (_) {
+      window.location.href = 'mailto:' + email;
+    }
+  });
+</script>
+</body>
+</html>
