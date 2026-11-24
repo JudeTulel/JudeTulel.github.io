@@ -113,6 +113,17 @@
   .work:hover .go{color:var(--accent);gap:13px}
   .work .go svg{width:15px;height:15px}
 
+  /* notable projects */
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .project{display:flex;flex-direction:column;gap:14px;padding:30px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow);transition:transform .25s,border-color .25s}
+  .project:hover{transform:translateY(-3px);border-color:var(--ink)}
+  .project-top{display:flex;justify-content:space-between;align-items:center;font-family:var(--serif);font-size:22px;color:var(--faint)}
+  .project-arrow{font-family:var(--sans);font-size:18px;color:var(--muted);transition:transform .25s,color .25s}
+  .project:hover .project-arrow{transform:translate(2px,-2px);color:var(--accent)}
+  .project h3{font-family:var(--serif);font-size:34px;line-height:1.1;margin:0}
+  .project p{font-size:14px;color:var(--muted);line-height:1.6;margin:0;flex:1}
+  .project-link{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;overflow-wrap:anywhere}
+
   /* about */
   .about{background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px}
@@ -171,6 +182,7 @@
     .work .num{font-size:18px}
     .work .go{grid-column:2;justify-self:start;margin-top:6px}
     .work .tags{grid-column:2}
+    .projects{grid-template-columns:1fr}
     .cap{flex-wrap:wrap;gap:8px}
     .cap .d{margin-left:0;text-align:left;max-width:none;width:100%;padding-left:32px}
     .hero-meta{gap:22px}
@@ -194,6 +206,7 @@
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Main navigation">
       <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <a class="btn btn-dark" href="#contact">Let's talk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -252,35 +265,55 @@
         <p>From space-borne computer vision to asset tokenization to robotics education — the common thread is shipping things that work outside a notebook.</p>
       </div>
       <div class="work-list">
-        <a class="work reveal" href="https://github.com/JudeTulel/Deskie" target="_blank" rel="noopener noreferrer" aria-label="Deskie, an on-device AI study app with a full RAG pipeline">
-          <span class="num">01</span>
-          <div><h3>Deskie — on-device AI tutor</h3><p class="desc">An Electron + React study app that runs a quantized Llama model locally with llama.cpp and grounds answers in the student's own notes: chunking, Gemma embeddings, per-subject vector workspaces, top-k retrieval and cited responses. Also handles PDF/DOCX, OCR and Whisper transcription.</p></div>
-          <div class="tags"><span class="tag">Local LLM</span><span class="tag">RAG</span><span class="tag">TypeScript</span></div>
-          <span class="go">View repo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
         <a class="work reveal" href="#contact" aria-label="Space-Borne AI at Kenya Space Agency and Star Vision">
-          <span class="num">02</span>
+          <span class="num">01</span>
           <div><h3>Space-Borne AI</h3><p class="desc">Trained a YOLOv5 computer-vision model with the team at Kenya Space Agency × Star Vision, then exported it to ONNX for portability onto constrained space-borne compute.</p></div>
           <div class="tags"><span class="tag">Computer vision</span><span class="tag">Python</span><span class="tag">ONNX</span></div>
           <span class="go">AI Engineer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a class="work reveal" href="#contact" aria-label="Virtual assets exchange and tokenization built at the NSE Hedera Hashathon">
-          <span class="num">03</span>
+          <span class="num">02</span>
           <div><h3>Virtual assets exchange</h3><p class="desc">Built and presented an asset exchange (nbx.co.ke) with tokenization on Hedera Hashgraph at the NSE Hedera Hashathon. Selected for the NSE innovation lab.</p></div>
           <div class="tags"><span class="tag">Blockchain</span><span class="tag">Hedera</span><span class="tag">Solidity</span></div>
           <span class="go">Hashathon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a class="work reveal" href="#contact" aria-label="Full Stack Engineer at EDCO Technologies">
-          <span class="num">04</span>
+          <span class="num">03</span>
           <div><h3>Full Stack Engineer</h3><p class="desc">At EDCO Technologies I created and deployed a PostgreSQL / Node.js / Express backend on Azure, alongside a React Native app for users and a ReactJS admin dashboard.</p></div>
           <div class="tags"><span class="tag">Full stack</span><span class="tag">Azure</span><span class="tag">React</span></div>
           <span class="go">EDCO Technologies <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a class="work reveal" href="#contact" aria-label="Robotics programme at Chewoyet National Boys High School">
-          <span class="num">05</span>
+          <span class="num">04</span>
           <div><h3>Robotics &amp; code, taught</h3><p class="desc">Introduced programming and VEX IQ robotics at Chewoyet National Boys for the Kenya Science and Engineering Fair. The team took all top three county places and advanced to regionals.</p></div>
           <div class="tags"><span class="tag">Robotics</span><span class="tag">Mentoring</span><span class="tag">C++</span></div>
           <span class="go">Trainer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTABLE PROJECTS -->
+  <section id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="kicker">Notable projects</div><h2 id="projects-title">Open repos worth a look.</h2></div>
+        <p>Two side projects where local AI does the heavy lifting — one for study, one for crossing a language barrier.</p>
+      </div>
+      <div class="projects">
+        <a class="project reveal" href="https://github.com/JudeTulel/Deskie" target="_blank" rel="noopener noreferrer" aria-label="Deskie on GitHub">
+          <div class="project-top"><span>01</span><span class="project-arrow">↗</span></div>
+          <h3>Deskie</h3>
+          <p>An on-device AI study app. Runs a quantized Llama model locally, then grounds answers in the student's notes with chunking, embeddings and cited retrieval. Handles PDFs, OCR and lecture transcription too.</p>
+          <div class="tags"><span class="tag">Electron</span><span class="tag">Local LLM</span><span class="tag">RAG</span><span class="tag">TypeScript</span></div>
+          <span class="project-link">github.com/JudeTulel/Deskie</span>
+        </a>
+        <a class="project reveal" href="https://github.com/JudeTulel/ndimi" target="_blank" rel="noopener noreferrer" aria-label="Ndimi on GitHub">
+          <div class="project-top"><span>02</span><span class="project-arrow">↗</span></div>
+          <h3>Ndimi</h3>
+          <p>An offline-first English ↔ Swahili communication app for Android. Text and voice translation, local model management, saved history and an on-device assistant, built with Expo and React Native.</p>
+          <div class="tags"><span class="tag">React Native</span><span class="tag">On-device AI</span><span class="tag">Translation</span><span class="tag">SQLite</span></div>
+          <span class="project-link">github.com/JudeTulel/ndimi</span>
         </a>
       </div>
     </div>
