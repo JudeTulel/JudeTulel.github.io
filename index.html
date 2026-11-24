@@ -90,8 +90,10 @@
   .trusted{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
   .trusted-row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
   .trusted-row .label{font-size:12px;color:var(--muted);letter-spacing:.04em}
-  .logos{display:flex;gap:30px;flex-wrap:wrap;align-items:center}
-  .logos span{font-family:var(--serif);font-size:20px;color:var(--muted);opacity:.78}
+  .logos{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .logo-chip{height:78px;width:170px;padding:10px 16px;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+  .logo-chip img{height:56px;width:auto;max-width:148px;object-fit:contain}
+  .logo-chip span{font-family:var(--serif);font-size:17px;color:var(--muted);text-align:center;line-height:1.15}
 
   /* sections */
   section{padding:104px 0}
@@ -186,8 +188,10 @@
     .cap{flex-wrap:wrap;gap:8px}
     .cap .d{margin-left:0;text-align:left;max-width:none;width:100%;padding-left:32px}
     .hero-meta{gap:22px}
-    .logos{gap:20px}
-    .logos span{font-size:17px}
+    .logos{gap:10px}
+    .logo-chip{height:66px;width:auto;flex:1 1 calc(50% - 5px);padding:8px 12px}
+    .logo-chip img{height:44px}
+    .logo-chip span{font-size:15px}
   }
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -252,7 +256,10 @@
     <div class="wrap trusted-row">
       <span class="label">Worked with &amp; built alongside</span>
       <div class="logos" aria-label="Organisations from experience and projects">
-        <span>Kenya Space Agency</span><span>EDCO Technologies</span><span>NSE Innovation Lab</span><span>Chewoyet National Boys</span>
+        <span class="logo-chip"><img src="ksa-logo.png" alt="Kenya Space Agency" width="1017" height="759"></span>
+        <span class="logo-chip"><img src="edco-logo.png" alt="EDCO Technologies" width="443" height="425"></span>
+        <span class="logo-chip"><span>NSE Innovation Lab</span></span>
+        <span class="logo-chip"><span>Chewoyet National Boys</span></span>
       </div>
     </div>
   </div>
